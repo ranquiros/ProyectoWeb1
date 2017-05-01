@@ -48,7 +48,8 @@ class Login extends CI_Controller {
     function enter(){  
         if($this->session->userdata('username') != '') {  
             echo '<h2>Welcome - '.$this->session->userdata('username').'</h2>';  
-            echo '<label><a href="'.base_url().'login/logout">Logout</a></label>';  
+            echo '<label><a href="'.base_url().'login/logout">Logout</a></label> <br/> <br/>'; 
+            echo '<label><a href="'.base_url().'jacamar/index">Ingresar Producto</a></label>';  
         }  
         else  
         {  
@@ -59,4 +60,5 @@ class Login extends CI_Controller {
         $this->session->unset_userdata('username');  
         redirect(base_url() . 'login/login');  
     }  
+
 }  
