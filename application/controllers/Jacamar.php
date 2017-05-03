@@ -12,13 +12,23 @@ class Jacamar extends CI_Controller {
 
 	public function index()
 	{
-		/*$this->load->library('menu', array('Home', 'Login', 'Contact'));
-		$data['my_menu'] = $this->menu->built_Menu();*/
-		//$this->load->view('main_menu');
-		//$this->load->view('welcome_message'/*, $data*/);
-		$this->load->view('product');
-		
+		$this->load->model('tour_model');
+		//$data['page_title'] = "¡Copy Paste Reference! - Tutorial CodeIgniter";
+ 
+		 //Obtener datos de la tabla 'contacto'
+		 //$tours = $this->tour_model->getData(); //llamamos a la función getData() del modelo creado anteriormente.
+		 
+		 //$data['name'] = $tours;
+		 
+		 //load de vistas
+		 //$this->load->view('product', $data); //llamada a la vista, que crearemos posteriormente
 	}
+ 
+
+		//$this->load->view('product');
+		//$data['name'] = $this->tour_model->
+		
+	
 	function recibir_datos(){
 		$data = array(
 			'name' => $this->input->post('name'),
@@ -26,54 +36,41 @@ class Jacamar extends CI_Controller {
 			'price' => $this->input->post('price')
 			);
 		$this->tour_model->save_tour($data);
-		//$this->load->view('product');
+		$this->load->view('product');
 	}
 
+	function modificar_datos(){
+		//$this->db->update();
+		 //cargamos el modelo y obtenemos la información del contacto seleccionado.
+		$this->load->model('tour_model');
+		$data['tour'] = $this->tour_model->obtenerTour($_POST['editar']);
+		//cargamos la vista para editar la información, pasandole dicha información.
+		$this->load->view('edit', $data);
+	}
+	function editar() {
+		 //recogemos los datos por POST
+		 $data['id'] = $_POST['id'];
+		 $data['name'] = $_POST['txtNombre'];
+		 $data['description'] = $_POST['txtDescription'];
+		 $data['price'] = $_POST['txtPrice'];
+		 
+		 //cargamos el modelo y llamamos a la función update()
+		 $this->load->model('tour_model');
+		 $this->tour_model->update($data);
+		 //volvemos a cargar la primera vista
+		 $this->index();
+ 	}
+	function borrar_datos(){
 
-	/*function tour_validation() {  
-        $this->load->library('form_validation');  
-        $this->form_validation->set_rules('username', 'Username', 'required');  
-        $this->form_validation->set_rules('password', 'Password', 'required');  
-        if($this->form_validation->run()) {  
-            //true  
-            $username = $this->input->post('username');  
-            $password = $this->input->post('password');  
-            //model function  
-            $this->load->model('user_model');  
-            if($this->user_model->can_login($username, $password)) {  
-                $session_data = array('username' => $username);  
-                $this->session->set_userdata($session_data);  
-                redirect(base_url() . 'login/enter');  
-            }  
-            else  
-            {  
-                $this->session->set_flashdata('error', 'Invalid Username and Password');  
-                redirect(base_url() . 'login/login');  
-            }  
-        }  
-        else  
-        {  
-            //false  
-            $this->login();  
-        }  
-    }  */
-//Tengo esta funci[on desactivada porque me da error a la hora de cargar la pagina de inicio, seria bueno revisar bien el asunto de insertar en la base de datos]
-	/*function recibirDatos(){
-		$data = array(
-			'nombre' => $this->input->post('nombre'),
-			'password' => $this->input->post('pass')
-			);
-		$this->user_model->registrarse($data);
+		 //obtenemos el nombre
+		 $nombre = $_POST['txtNombre'];
+		 //cargamos el modelo y llamamos a la función borrar_datos(), pasándole el nombre del registro que queremos borrar.
+		 $this->load->model('tour_model');
+		 $this->tour_model->borrar_datos($nombre);
+		 //mostramos la vista de nuevo.
+		 $this->index();
+		 
 	}
 
-//crear el encabezado
-//crear funcion para el formulario
-
-	/*public function authenticate()
-	{
-		$user = $this->input->post('username');
-
-		//$this->load->model('User_model');
-		//$r = $this->User_model->authenticate($user, $pass);
-	}*/
+	
 }

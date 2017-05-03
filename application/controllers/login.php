@@ -14,7 +14,6 @@ class Login extends CI_Controller {
 
 	}
 	function login(){  
-        //http://localhost/tutorial/codeigniter/main/login  
         $data['title'] = 'Please Login';  
         $this->load->view("login", $data);  
     } 

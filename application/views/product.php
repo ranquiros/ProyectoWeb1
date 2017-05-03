@@ -31,7 +31,24 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                    <input type="submit" name="insert" value="Save" class="btn btn-info" />  
                    <?php echo '<label class="text-danger">'.$this->session->flashdata("error").'</label>';?>  
                 </div>  
+                <div class="form-group">  
+                   <input type="submit" name="exit" value="Exit" class="btn btn-info" onclick="<?php echo base_url().'login/login'?>" />  
+                   
+
+                </div>
+                <div class="form-group">  
+                  
+                   <input type="button" onclick="history.back()" name="Back" value="Back"> 
            </form>  
     </div>  
+    <p>Borrar Tour</p>
+ <form name="alta" action="<?php echo base_url(); ?>Jacamar/borrar_datos" method="POST">
+   <table>
+     <tr>
+     <td>Nombre: </td><td><input name="txtNombre" type="text"/></td>
+     </tr>
+   </table>
+   <input type="submit" value="Borrar" />
+ </form>
 </body>
 </html>    
