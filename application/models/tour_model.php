@@ -34,4 +34,8 @@ class Tour_model extends CI_Model{
 		$this->db->where('id', $data['id']);
 		$this->db->update('tour');
  	}
+ 	function borrar_datos($nombre) {
+		$this->db->where('name', $nombre);
+		$this->db->delete('tour');
+ 	}
 }

@@ -13,18 +13,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <body>
 
 	<div align=center, style="text-align: center; font-size: 14px; font-style: oblique;">
-		<table>
+		<table align=center>
+		 <tr>
+         <td>Search Tour by Zone: </td>
+         </tr>
          <tr>
          <td>Tour Zone: </td><td><input name="txtZone" type="text"/></td>
          </tr>
        </table>
 	</div>
-	<div">
-	<br>
-	</div>
-		<div align=center>
+	<div align=center>
 		#JustLiveIt!
-
 	</div>
 
 </body>

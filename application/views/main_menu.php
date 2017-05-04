@@ -50,16 +50,19 @@
 		};
 	</style>
 </head>
-<div class="principal">
-	<ul id="button">
-		<li><a href="<?php echo base_url()?>welcome">Home</a></li>
-		<li><a href="<?php echo base_url()?>login">Login</a></li>
-		<li><a href=”#”>Search</a></li>
-		<li><a href="<?php echo base_url()?>contact">Contact</a></li>
-	</ul>
-</div>
-<br>
-<div>
+<body>
+	<br>
+	<div class="principal">
+		<ul id="button">
+			<li><a href="<?php echo base_url()?>welcome">Home</a></li>
+			<li><a href="<?php echo base_url()?>login">Login</a></li>
+			<li><a href="<?php echo base_url()?>search">Search</a></li>
+			<li><a href="<?php echo base_url()?>contact">Contact</a></li>
+		</ul>
+	</div>
+	<br>
+	<div align=center>
 	<p>What do you want to do?</p>
 </div>
+</body>
 </html>
