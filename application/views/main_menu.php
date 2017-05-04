@@ -1,7 +1,12 @@
 <?php if (! defined('BASEPATH')) exit('No direct script access allowed');
 ?><!DOCTYPE html>
 <html lang="en">
-<style type="text/css">
+<head>
+	<meta charset="utf-8">
+	<title>Welcome to Jacamar Guides</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" /> 
+	
+	<style type="text/css">
 
 	.principal {
 		margin: 0 auto;
@@ -43,15 +48,17 @@
 		padding: 12px;
 		color: #2175bc;
 		};
-</style>
+	</style>
+</head>
 <div class="principal">
 	<ul id="button">
-		<li><a href=”#”>Home</a></li>
+		<li><a href="<?php echo base_url()?>welcome">Home</a></li>
 		<li><a href="<?php echo base_url()?>login">Login</a></li>
-		<li><a href=”#”>Sign Up</a></li>
-		<li><a href=”#”>Contact</a></li>
+		<li><a href=”#”>Search</a></li>
+		<li><a href="<?php echo base_url()?>contact">Contact</a></li>
 	</ul>
 </div>
+<br>
 <div>
 	<p>What do you want to do?</p>
 </div>

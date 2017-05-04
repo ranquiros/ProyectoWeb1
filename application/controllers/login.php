@@ -7,10 +7,13 @@ class Login extends CI_Controller {
 		parent::__construct();
 		$this->load->helper('form');
 		$this->load->model('user_model');
+		//$this->load->view('main_menu');
 
 	}
 	function index(){
+		//$this->load->view('main_menu');
 		$this->load->view('login');
+
 
 	}
 	function login(){  
@@ -48,7 +51,9 @@ class Login extends CI_Controller {
         if($this->session->userdata('username') != '') {  
             echo '<h2>Welcome - '.$this->session->userdata('username').'</h2>';  
             echo '<label><a href="'.base_url().'login/logout">Logout</a></label> <br/> <br/>'; 
-            echo '<label><a href="'.base_url().'jacamar/index">Ingresar Producto</a></label>';  
+            echo '<label><a href="'.base_url().'jacamar/index">Ingresar Producto</a></label> <br/> <br/>';
+           // echo '<label><a href="'.base_url().'jacamar/modificar_datos">Modificar Producto</a></label> <br/> <br/>';
+           // echo '<label><a href="'.base_url().'jacamar/borrar_datos">Borrar Producto</a></label> <br/> <br/>';       
         }  
         else  
         {  

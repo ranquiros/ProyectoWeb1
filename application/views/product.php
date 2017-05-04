@@ -6,7 +6,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<meta charset="utf-8">
 	<title>Welcome to Jacamar Guides</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" /> 
-	
+	<style type="text/css">
+   p {
+    font: Helvetica;
+    font-size: 14px;
+    font-color: blue;
+   } 
+  </style>
 </head>
 <body>
  	<div class="container">  
@@ -32,7 +38,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                    <?php echo '<label class="text-danger">'.$this->session->flashdata("error").'</label>';?>  
                 </div>  
                 <div class="form-group">  
-                   <input type="submit" name="exit" value="Exit" class="btn btn-info" onclick="<?php echo base_url().'login/login'?>" />  
+                   <input type="submit" name="exit" value="Exit" class="btn btn-info" onclick="<?php echo base_url().'login/logout'?>" />  
                    
 
                 </div>
@@ -41,14 +47,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                    <input type="button" onclick="history.back()" name="Back" value="Back"> 
            </form>  
     </div>  
-    <p>Borrar Tour</p>
- <form name="alta" action="<?php echo base_url(); ?>Jacamar/borrar_datos" method="POST">
-   <table>
-     <tr>
-     <td>Nombre: </td><td><input name="txtNombre" type="text"/></td>
-     </tr>
-   </table>
-   <input type="submit" value="Borrar" />
- </form>
+    <br>
+    <br>
+    <p>Delete Tour</p>
+     <form name="borrar" action="<?php echo base_url(); ?>Jacamar/borrar_datos" method="POST">
+       <table>
+         <tr>
+         <td>Tour Name: </td><td><input name="txtNombre" type="text"/></td>
+         </tr>
+       </table>
+       <input type="submit" value="Delete" />
+      </form>
+      <br>
+
+
 </body>
 </html>    

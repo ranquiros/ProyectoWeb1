@@ -29,20 +29,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </div>  
            </form>  
     </div>  
-<!-- <div id="container" align="center">
-	<h1>Welcome to Jacamar Guides!</h1>
-	<div id="body">
-		<p>Please login with your credentials below</p>
-		<div class="error"> </div>
-		    <form class="" method="post" action="<?php echo base_url() ?> login/authenticate" >
-			      Username: <input type="text" name="username" value="">
-			      <br><br>
-			      Password: <input type="password" name="password" value="">
-			      <br><br>
-		      <input type="submit" value="Login">
-		      <br><br>
-		    </form>
-	</div>
-</div> -->
+
 </body>
 </html>

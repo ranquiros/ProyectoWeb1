@@ -26,5 +26,12 @@ class Tour_model extends CI_Model{
 		$this->db->where('id = ' . $idTour);
 		$tour = $this->db->get();
 		return $tour->result();
-}
+	}
+	function update($data) {
+		$this->db->set('name', $data['name']);
+		$this->db->set('description', $data['description']);
+		$this->db->set('price', $data['price']);
+		$this->db->where('id', $data['id']);
+		$this->db->update('tour');
+ 	}
 }

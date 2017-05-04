@@ -43,22 +43,22 @@ class Jacamar extends CI_Controller {
 		//$this->db->update();
 		 //cargamos el modelo y obtenemos la información del contacto seleccionado.
 		$this->load->model('tour_model');
-		$data['tour'] = $this->tour_model->obtenerTour($_POST['editar']);
+		$data['tour'] = $this->tour_model->obtenerTour($_POST['$this->'.'editar']);
 		//cargamos la vista para editar la información, pasandole dicha información.
 		$this->load->view('edit', $data);
 	}
-	function editar() {
+	public function editar() {
 		 //recogemos los datos por POST
 		 $data['id'] = $_POST['id'];
 		 $data['name'] = $_POST['txtNombre'];
-		 $data['description'] = $_POST['txtDescription'];
-		 $data['price'] = $_POST['txtPrice'];
+		 $data['description'] = $_POST['txtDescripcion'];
+		 $data['price'] = $_POST['txtPrecio'];
 		 
 		 //cargamos el modelo y llamamos a la función update()
 		 $this->load->model('tour_model');
 		 $this->tour_model->update($data);
 		 //volvemos a cargar la primera vista
-		 $this->index();
+		 $this->load->view('edit');
  	}
 	function borrar_datos(){
 

@@ -1,17 +1,16 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Welcome extends CI_Controller {
+class Search extends CI_Controller {
 
 	function __construct(){
 		parent::__construct();
-		
-		
+				
 	}
 
-	function index(){
-		$this->load->view('welcome_message');
+	public function index()
+	{
 		$this->load->view('main_menu');
-
+		$this->load->view('search');
 	}
 }
